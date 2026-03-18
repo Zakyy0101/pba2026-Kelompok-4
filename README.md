@@ -90,3 +90,74 @@ Tahapan yang akan dilakukan pada penelitian ini meliputi:
 ---
 
 ## Struktur Repository
+pba2026-Kelompok-4/
+│
+├── README.md
+├── requirements.txt
+├── .gitignore
+│
+├── data/
+│   ├── raw/
+│   │   ├── youtube_channel1.csv
+│   │   ├── youtube_channel2.csv
+│   │   └── combined_data.csv
+│   │
+│   ├── processed/
+│   │   ├── cleaned_data.csv
+│   │   ├── labeled_data.csv
+│   │   └── final_dataset.csv
+│
+├── notebooks/
+│   ├── 01_data_collection.ipynb
+│   ├── 02_preprocessing.ipynb
+│   ├── 03_exploratory_data_analysis.ipynb
+│   ├── 04_modeling_pycaret.ipynb
+│   ├── 05_modeling_lstm.ipynb
+│   └── 06_evaluation.ipynb
+│
+├── src/
+│   ├── __init__.py
+│   │
+│   ├── data/
+│   │   ├── load_data.py
+│   │   ├── preprocessing.py
+│   │   └── labeling.py
+│   │
+│   ├── features/
+│   │   ├── tokenization.py
+│   │   └── padding.py
+│   │
+│   ├── models/
+│   │   ├── lstm_model.py
+│   │   ├── pycaret_model.py
+│   │   └── train.py
+│   │
+│   ├── evaluation/
+│   │   ├── metrics.py
+│   │   └── evaluation.py
+│   │
+│   └── utils/
+│       ├── config.py
+│       └── helper.py
+│
+├── models/
+│   ├── lstm_model.h5
+│   ├── tokenizer.pkl
+│   └── pycaret_model.pkl
+│
+├── reports/
+│   ├── figures/
+│   │   ├── wordcloud.png
+│   │   ├── confusion_matrix.png
+│   │   └── accuracy_plot.png
+│   │
+│   └── final_report.pdf
+│
+├── results/
+│   ├── evaluation_results.csv
+│   └── prediction_output.csv
+│
+└── docs/
+    ├── proposal.md
+    ├── methodology.md
+    └── presentation.pptx
