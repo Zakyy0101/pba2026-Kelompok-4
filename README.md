@@ -66,7 +66,6 @@ Dimana komentar akan diklasifikasikan ke dalam:
 ## Tujuan Penggunaan Dataset
 1. Melatih model untuk mendeteksi sentimen publik terhadap program nasional MBG.
 2. Membandingkan performa antara Machine Learning konvensional (via PyCaret) dan Deep Learning (LSTM).
-3. Menyediakan dataset berlabel bahasa Indonesia untuk penelitian NLP di masa depan.
 
 ---
 
