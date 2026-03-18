@@ -4,9 +4,9 @@ Repositori untuk tugas besar PBA
 ## Anggota Kelompok 4
 | Nama | NIM | Username GitHub |
 | --- | --- | --- |
-| Muhammad Zaky Zaiddan | [122450119] | @[Zakyy0101] |
-| [Berliana Enda Putri] | [122450065] | @[berlianaendaputri] |
-| [Lisa Diani Amelia] | [122450021] | @[lisadiani29] |
+| Muhammad Zaky Zaiddan | 122450119 | @Zakyy0101 |
+| Berliana Enda Putri | 122450065 | @berlianaendaputri |
+| Lisa Diani Amelia | 122450021 | @lisadiani29 |
 
 ---
 
