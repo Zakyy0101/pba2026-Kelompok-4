@@ -20,8 +20,6 @@ Jumlah data yang diperoleh adalah:
 Total keseluruhan data:
 **7.733 komentar**
 
-Dataset ini merupakan data teks tidak terstruktur yang akan digunakan dalam analisis sentimen menggunakan pendekatan NLP.
-
 ---
 
 ## Karakteristik Data
