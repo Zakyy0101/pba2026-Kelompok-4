@@ -1,6 +1,17 @@
 # pba2026-Kelompok-4
 Repositori untuk tugas besar PBA
 
+## Anggota Kelompok 4
+| Nama | NIM | Username GitHub |
+| --- | --- | --- |
+| [Muhammad Zaky Zaiddan] | [122450119] | @[Zakyy0101] |
+| [Berliana Enda Putri] | [122450065] | @[berlianaendaputri] |
+| [Lisa Diani Amelia] | [122450021] | @[lisadiani29] |
+
+---
+
+## Pernyataan Kontribusi
+Kami berkomitmen untuk berkontribusi secara adil dalam pengerjaan Tugas Besar ini, yang akan tercermin melalui riwayat commit pada repositori ini.
 # Klasifikasi Opini Masyarakat terhadap Program Makan Bergizi Gratis pada Media YouTube Menggunakan Metode LSTM
 
 ## Deskripsi Proyek
@@ -31,9 +42,11 @@ Total keseluruhan data:
 ---
 
 ## Sumber Dataset
-Dataset diperoleh melalui proses scraping dari komentar YouTube.
+Dataset dikumpulkan melalui proses scraping dari platform YouTube terkait kebijakan Makan Bergizi Gratis (MBG). 
 
-Link dataset:
+- **Kaggle Dataset:** [Data Sentimen Makanan Bergizi Gratis di Indonesia](https://www.kaggle.com/datasets/muhammadzaiddan/data-sentimen-makanan-bergizi-gratis-di-indonesia)
+- **Status:** Public Access
+- **Jumlah Data:** 7.733 komentar (Gabungan dari Channel 1 dan 2)
 
 
 ---
@@ -51,7 +64,9 @@ Dimana komentar akan diklasifikasikan ke dalam:
 ---
 
 ## Tujuan Penggunaan Dataset
-1.
+1. Melatih model untuk mendeteksi sentimen publik terhadap program nasional MBG.
+2. Membandingkan performa antara Machine Learning konvensional (via PyCaret) dan Deep Learning (LSTM).
+3. Menyediakan dataset berlabel bahasa Indonesia untuk penelitian NLP di masa depan.
 
 ---
 
