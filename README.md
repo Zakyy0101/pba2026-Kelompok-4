@@ -162,6 +162,7 @@ pba2026-Kelompok-4/
     ├── proposal.md
     ├── methodology.md
     └── presentation.pptx
+```
 
 ## Tahap Preprocessing Data
 
@@ -225,9 +226,7 @@ Dari tabel di atas, kita dapat melihat bahwa model tradisional (terutama SVM) me
    * **Panjang Konteks Kalimat:** Jika komentar dalam dataset cenderung pendek (tidak memiliki struktur kalimat yang panjang dan rumit), keunggulan LSTM dalam "mengingat konteks masa lalu" menjadi kurang dimanfaatkan.
    * **Hyperparameter Tuning:** Performa LSTM sangat sensitif terhadap pengaturan arsitektur (*epoch*, *batch size*, *learning rate*, *dropout*, jumlah *layer*). Akurasi saat ini masih sangat mungkin ditingkatkan melalui *tuning* yang lebih mendalam.
 
-### Kesimpulan
 
-Meskipun **SVM** menunjukkan akurasi numerik tertinggi, implementasi **LSTM** tetap menjadi sorotan utama dan dipertahankan dalam proyek ini. Tujuan utamanya adalah untuk mendemonstrasikan eksplorasi dan kapabilitas *Deep Learning* dalam memproses data teks sekuensial. Pemahaman terhadap cara kerja LSTM ini memberikan fondasi yang berharga untuk pengembangan sistem NLP tingkat lanjut di masa mendatang (seperti translasi bahasa atau generasi teks) di mana model tradisional tidak lagi memadai.
 
 
 
