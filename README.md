@@ -222,7 +222,7 @@ Dari tabel di atas, kita dapat melihat bahwa model tradisional (terutama SVM) me
    * **Panjang Konteks Kalimat:** Jika komentar dalam dataset cenderung pendek (tidak memiliki struktur kalimat yang panjang dan rumit), keunggulan LSTM dalam "mengingat konteks masa lalu" menjadi kurang dimanfaatkan.
    * **Hyperparameter Tuning:** Performa LSTM sangat sensitif terhadap pengaturan arsitektur (*epoch*, *batch size*, *learning rate*, *dropout*, jumlah *layer*). Akurasi saat ini masih sangat mungkin ditingkatkan melalui *tuning* yang lebih mendalam.
 
-
+Berikut adalah link hugging face untuk hasil pemodelan: https://huggingface.co/spaces/Zee292/sentiment-mbg/blob/main/Kelompok_4_NLP_Pemodelan.ipynb
 
 
 
