@@ -167,38 +167,3 @@ pba2026-Kelompok-4/
 
 
 
-## Tahapan Analisis
-1. Exploratory Data Analysis (EDA)
-
-EDA dilakukan untuk memahami karakteristik data, meliputi:
-
-Distribusi panjang komentar
-Distribusi jumlah kata
-Visualisasi WordCloud
-Analisis frekuensi kata
-
-
-2. Text Preprocessing
-
-Tahapan preprocessing dilakukan untuk membersihkan teks dari noise sebelum digunakan dalam model. Proses yang dilakukan meliputi:
-
-Lowercasing (mengubah huruf menjadi kecil)
-Menghapus URL, simbol, dan angka
-Normalisasi kata tidak baku (slang)
-Tokenisasi (memecah kalimat menjadi kata)
-Stopword removal
-(Opsional) Stemming menggunakan Sastrawi
-
-
-3. Pelabelan Data
-
-Komentar diklasifikasikan ke dalam tiga label:
-
-Positif
-Negatif
-Netral
-
-4. Pemodelan
-
-Model yang digunakan dalam penelitian ini:
-
