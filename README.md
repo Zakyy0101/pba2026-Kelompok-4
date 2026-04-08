@@ -163,7 +163,71 @@ pba2026-Kelompok-4/
     ├── methodology.md
     └── presentation.pptx
 
+## Tahap Preprocessing Data
 
+Tahap preprocessing bertujuan untuk membersihkan dan menyiapkan data mentah (teks) agar siap digunakan untuk tahap pemodelan Analisis Sentimen. Berdasarkan proses di dalam notebook, berikut adalah alur preprocessing yang dilakukan:
+
+### 1. Data Structure Cleaning (Pembersihan Struktur Data)
+Langkah pertama berfokus pada perbaikan struktur *dataframe*:
+- **Menghapus Kolom Tidak Relevan:** Membuang kolom-kolom kosong atau yang tidak berisi informasi berguna (seperti kolom `Unnamed`).
+- **Rename Kolom:** Mengganti nama kolom `text` menjadi `comment` agar struktur data lebih mudah dipahami dan relevan dengan konteks analisis.
+
+### 2. Text Cleaning (Pembersihan Teks)
+Pembersihan teks dieksekusi menggunakan pustaka *Regular Expression* (`re`). Modifikasi yang dilakukan pada setiap baris teks meliputi:
+- **Case Folding:** Mengonversi seluruh teks menjadi huruf kecil (*lowercase*).
+- **URL Removal:** Menghapus semua tautan/link web (`http://` atau `https://`).
+- **Mention Removal:** Menghapus *username* atau *mention* akun lain (kata yang diawali simbol `@`).
+- **Hashtag Removal:** Menghapus simbol tagar (`#`) dari teks.
+- **Punctuation & Number Removal:** Menghapus seluruh angka, tanda baca, dan karakter spesial, menyisakan hanya karakter alfabet (a-z).
+- **Whitespace Removal:** Menghapus spasi ganda atau spasi berlebih di awal/akhir kalimat.
+
+### 3. Normalization (Normalisasi Slang)
+Mengingat data berasal dari media sosial, banyak kata yang disingkat atau menggunakan bahasa gaul. Kami melakukan normalisasi menggunakan kamus khusus (`slang_dict`) untuk memetakan dan mengubah kata-kata slang menjadi kata baku Bahasa Indonesia (contoh: *yg* -> *yang*, *gk* -> *tidak*, *bgt* -> *banget*).
+
+### 4. Tokenization (Tokenisasi)
+Teks yang sudah bersih dipecah menjadi kumpulan kata-kata individu (token). Proses ini dilakukan menggunakan fungsi `word_tokenize` dari library `nltk`.
+
+### 5. Stopword Removal (Penghapusan Stopword)
+Menghapus kata-kata umum yang sering muncul tetapi tidak membawa makna sentimen yang signifikan (seperti: "dan", "di", "ke", "dari"). Proses ini diimplementasikan menggunakan `StopWordRemoverFactory` dari library `Sastrawi`.
+
+### 6. Stemming
+Langkah terakhir adalah mengembalikan setiap kata ke bentuk kata dasarnya (kata tanpa imbuhan/akhiran). Contoh: kata "memakan" akan diubah menjadi "makan". Tahap ini menggunakan `StemmerFactory` dari library `Sastrawi`. 
+
+## Tahap Pemodelan dan Evaluasi (Modeling & Evaluation)
+
+Fokus utama dalam proyek Analisis Sentimen ini adalah mengimplementasikan arsitektur *Deep Learning* menggunakan **Long Short-Term Memory (LSTM)**. LSTM dipilih karena kemampuannya dalam mengingat konteks dan urutan kata (sekuensial) dalam sebuah kalimat, yang sangat krusial dalam pemrosesan bahasa alami (NLP).
+
+Namun, untuk mengukur performa LSTM secara objektif, kami melakukan *benchmarking* (perbandingan) dengan beberapa algoritma *Machine Learning* tradisional sebagai *baseline*.
+
+### Hasil Perbandingan Akurasi Model
+
+Berikut adalah metrik akurasi yang didapatkan dari proses pengujian model pada dataset yang telah diproses:
+
+| Peringkat | Model Klasifikasi | Akurasi (Accuracy) |
+| :---: | :--- | :---: |
+| 1 | **Support Vector Machine (SVM)** | **97.66%** (`0.976636`) |
+| 2 | **Logistic Regression** | **95.87%** (`0.958723`) |
+| 3 | **Naive Bayes** | **94.62%** (`0.946262`) |
+| 4 | **LSTM (Model Utama Proyek)** | **94.62%** (`0.946262`) |
+
+---
+
+### Analisis Hasil
+
+Dari tabel di atas, kita dapat melihat bahwa model tradisional (terutama SVM) mengungguli model *Deep Learning* (LSTM) pada percobaan ini. Berikut adalah analisis dari hasil tersebut:
+
+1. **Keunggulan SVM pada Teks Pendek:**
+   Akurasi SVM yang mencapai **97.66%** menunjukkan bahwa dataset yang kita miliki memiliki pola yang dapat dipisahkan secara linear dengan sangat baik. Algoritma seperti SVM dan Logistic Regression (95.87%) seringkali sangat tangguh dalam klasifikasi teks berbasis TF-IDF atau *Bag-of-Words*, terutama jika teksnya berupa komentar atau ulasan yang relatif pendek dan langsung pada intinya (memiliki kata kunci sentimen yang kuat).
+
+2. **Performa LSTM (94.62%):**
+   Meskipun LSTM adalah model yang jauh lebih kompleks dan canggih, akurasinya (94.62%) setara dengan Naive Bayes dan sedikit di bawah model linear. Terdapat beberapa faktor utama yang menjelaskan fenomena ini dalam ranah NLP:
+   * **Ukuran Dataset (*Data Hunger*):** Model *Deep Learning* seperti LSTM membutuhkan jumlah data (sampel) yang sangat masif agar *neural network* dapat belajar mengenali pola kompleks secara optimal. Jika dataset berukuran kecil hingga menengah, algoritma ML tradisional biasanya akan menang.
+   * **Panjang Konteks Kalimat:** Jika komentar dalam dataset cenderung pendek (tidak memiliki struktur kalimat yang panjang dan rumit), keunggulan LSTM dalam "mengingat konteks masa lalu" menjadi kurang dimanfaatkan.
+   * **Hyperparameter Tuning:** Performa LSTM sangat sensitif terhadap pengaturan arsitektur (*epoch*, *batch size*, *learning rate*, *dropout*, jumlah *layer*). Akurasi saat ini masih sangat mungkin ditingkatkan melalui *tuning* yang lebih mendalam.
+
+### Kesimpulan
+
+Meskipun **SVM** menunjukkan akurasi numerik tertinggi, implementasi **LSTM** tetap menjadi sorotan utama dan dipertahankan dalam proyek ini. Tujuan utamanya adalah untuk mendemonstrasikan eksplorasi dan kapabilitas *Deep Learning* dalam memproses data teks sekuensial. Pemahaman terhadap cara kerja LSTM ini memberikan fondasi yang berharga untuk pengembangan sistem NLP tingkat lanjut di masa mendatang (seperti translasi bahasa atau generasi teks) di mana model tradisional tidak lagi memadai.
 
 
 
