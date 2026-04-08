@@ -192,9 +192,7 @@ Langkah terakhir adalah mengembalikan setiap kata ke bentuk kata dasarnya (kata 
 
 ## Tahap Pemodelan dan Evaluasi (Modeling & Evaluation)
 
-Fokus utama dalam proyek Analisis Sentimen ini adalah mengimplementasikan arsitektur *Deep Learning* menggunakan **Long Short-Term Memory (LSTM)**. LSTM dipilih karena kemampuannya dalam mengingat konteks dan urutan kata (sekuensial) dalam sebuah kalimat, yang sangat krusial dalam pemrosesan bahasa alami (NLP).
-
-Namun, untuk mengukur performa LSTM secara objektif, kami melakukan *benchmarking* (perbandingan) dengan beberapa algoritma *Machine Learning* tradisional sebagai *baseline*.
+Fokus utama dalam proyek Analisis Sentimen ini adalah mengimplementasikan arsitektur *Deep Learning* menggunakan **Long Short-Term Memory (LSTM)**. LSTM dipilih karena kemampuannya dalam mengingat konteks dan urutan kata (sekuensial) dalam sebuah kalimat, yang sangat krusial dalam pemrosesan bahasa alami (NLP). Namun, untuk mengukur performa LSTM secara objektif, kami melakukan *benchmarking* (perbandingan) dengan beberapa algoritma *Machine Learning* tradisional sebagai *baseline*.
 
 ### Hasil Perbandingan Akurasi Model
 
@@ -208,19 +206,6 @@ Berikut adalah metrik akurasi yang didapatkan dari proses pengujian model pada d
 | 4 | **LSTM (Model Utama Proyek)** | **94.62%** (`0.946262`) |
 
 ---
-
-### Analisis Hasil
-
-Dari tabel di atas, kita dapat melihat bahwa model tradisional (terutama SVM) mengungguli model *Deep Learning* (LSTM) pada percobaan ini. Berikut adalah analisis dari hasil tersebut:
-
-1. **Keunggulan SVM pada Teks Pendek:**
-   Akurasi SVM yang mencapai **97.66%** menunjukkan bahwa dataset yang kita miliki memiliki pola yang dapat dipisahkan secara linear dengan sangat baik. Algoritma seperti SVM dan Logistic Regression (95.87%) seringkali sangat tangguh dalam klasifikasi teks berbasis TF-IDF atau *Bag-of-Words*, terutama jika teksnya berupa komentar atau ulasan yang relatif pendek dan langsung pada intinya (memiliki kata kunci sentimen yang kuat).
-
-2. **Performa LSTM (94.62%):**
-   Meskipun LSTM adalah model yang jauh lebih kompleks dan canggih, akurasinya (94.62%) setara dengan Naive Bayes dan sedikit di bawah model linear. Terdapat beberapa faktor utama yang menjelaskan fenomena ini dalam ranah NLP:
-   * **Ukuran Dataset (*Data Hunger*):** Model *Deep Learning* seperti LSTM membutuhkan jumlah data (sampel) yang sangat masif agar *neural network* dapat belajar mengenali pola kompleks secara optimal. Jika dataset berukuran kecil hingga menengah, algoritma ML tradisional biasanya akan menang.
-   * **Panjang Konteks Kalimat:** Jika komentar dalam dataset cenderung pendek (tidak memiliki struktur kalimat yang panjang dan rumit), keunggulan LSTM dalam "mengingat konteks masa lalu" menjadi kurang dimanfaatkan.
-   * **Hyperparameter Tuning:** Performa LSTM sangat sensitif terhadap pengaturan arsitektur (*epoch*, *batch size*, *learning rate*, *dropout*, jumlah *layer*). Akurasi saat ini masih sangat mungkin ditingkatkan melalui *tuning* yang lebih mendalam.
 
 Berikut adalah link hugging face untuk hasil pemodelan: https://huggingface.co/spaces/Zee292/sentiment-mbg/blob/main/Kelompok_4_NLP_Pemodelan.ipynb
 
