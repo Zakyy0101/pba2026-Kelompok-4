@@ -166,15 +166,11 @@ pba2026-Kelompok-4/
 
 ## Tahap Preprocessing Data
 
-Tahap preprocessing bertujuan untuk membersihkan dan menyiapkan data mentah (teks) agar siap digunakan untuk tahap pemodelan Analisis Sentimen. Berdasarkan proses di dalam notebook, berikut adalah alur preprocessing yang dilakukan:
+Tahap preprocessing bertujuan untuk membersihkan dan menyiapkan data mentah agar siap digunakan untuk tahap pemodelan Analisis Sentimen. Berikut alur preprocessing yang dilakukan:
 
-### 1. Data Structure Cleaning (Pembersihan Struktur Data)
-Langkah pertama berfokus pada perbaikan struktur *dataframe*:
-- **Menghapus Kolom Tidak Relevan:** Membuang kolom-kolom kosong atau yang tidak berisi informasi berguna (seperti kolom `Unnamed`).
-- **Rename Kolom:** Mengganti nama kolom `text` menjadi `comment` agar struktur data lebih mudah dipahami dan relevan dengan konteks analisis.
 
-### 2. Text Cleaning (Pembersihan Teks)
-Pembersihan teks dieksekusi menggunakan pustaka *Regular Expression* (`re`). Modifikasi yang dilakukan pada setiap baris teks meliputi:
+### 1. Text Cleaning (Pembersihan Teks)
+Proses text cleaning dilakukan untuk membersihkan data komentar dari berbagai noise agar teks menjadi lebih terstruktur dan siap digunakan dalam analisis lebih lanju. Pembersihan teks dieksekusi menggunakan pustaka *Regular Expression* (`re`). Modifikasi yang dilakukan pada setiap baris teks meliputi:
 - **Case Folding:** Mengonversi seluruh teks menjadi huruf kecil (*lowercase*).
 - **URL Removal:** Menghapus semua tautan/link web (`http://` atau `https://`).
 - **Mention Removal:** Menghapus *username* atau *mention* akun lain (kata yang diawali simbol `@`).
@@ -182,17 +178,17 @@ Pembersihan teks dieksekusi menggunakan pustaka *Regular Expression* (`re`). Mod
 - **Punctuation & Number Removal:** Menghapus seluruh angka, tanda baca, dan karakter spesial, menyisakan hanya karakter alfabet (a-z).
 - **Whitespace Removal:** Menghapus spasi ganda atau spasi berlebih di awal/akhir kalimat.
 
-### 3. Normalization (Normalisasi Slang)
-Mengingat data berasal dari media sosial, banyak kata yang disingkat atau menggunakan bahasa gaul. Kami melakukan normalisasi menggunakan kamus khusus (`slang_dict`) untuk memetakan dan mengubah kata-kata slang menjadi kata baku Bahasa Indonesia (contoh: *yg* -> *yang*, *gk* -> *tidak*, *bgt* -> *banget*).
+### 2. Normalization (Normalisasi Slang)
+Normalisasi dilakukan untuk mengubah kata-kata tidak baku atau slang yang sering muncul pada komentar media sosial menjadi bentuk baku.
 
-### 4. Tokenization (Tokenisasi)
-Teks yang sudah bersih dipecah menjadi kumpulan kata-kata individu (token). Proses ini dilakukan menggunakan fungsi `word_tokenize` dari library `nltk`.
+### 3. Tokenization (Tokenisasi)
+Teks yang sudah bersih dipecah menjadi kumpulan kata-kata individu (token). Tahapan ini bertujuan agar teks dapat diolah secara numerik, karena model machine learning tidak memahami kalimat utuh, melainkan memproses kata per kata
 
-### 5. Stopword Removal (Penghapusan Stopword)
+### 4. Stopword Removal (Penghapusan Stopword)
 Menghapus kata-kata umum yang sering muncul tetapi tidak membawa makna sentimen yang signifikan (seperti: "dan", "di", "ke", "dari"). Proses ini diimplementasikan menggunakan `StopWordRemoverFactory` dari library `Sastrawi`.
 
-### 6. Stemming
-Langkah terakhir adalah mengembalikan setiap kata ke bentuk kata dasarnya (kata tanpa imbuhan/akhiran). Contoh: kata "memakan" akan diubah menjadi "makan". Tahap ini menggunakan `StemmerFactory` dari library `Sastrawi`. 
+### 5. Stemming
+Langkah terakhir adalah mengembalikan setiap kata ke bentuk kata dasarnya (kata tanpa imbuhan/akhiran). Contoh: kata "memakan" akan diubah menjadi "makan". Tahap ini menggunakan `StemmerFactory` dari library `Sastrawi`. Tujuan stemming adalah untuk menyatukan berbagai variasi kata yang memiliki makna sama sehingga dapat mengurangi kompleksitas data
 
 ## Tahap Pemodelan dan Evaluasi (Modeling & Evaluation)
 
