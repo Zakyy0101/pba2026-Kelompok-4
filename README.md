@@ -61,7 +61,6 @@ Tugas yang dilakukan dalam proyek ini adalah:
 Dimana komentar akan diklasifikasikan ke dalam:
 - Positif
 - Negatif
-- Netral
 
 ---
 
