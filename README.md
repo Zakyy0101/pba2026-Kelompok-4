@@ -207,7 +207,7 @@ Berikut adalah metrik akurasi yang didapatkan dari proses pengujian model pada d
 
 ---
 
-Berikut adalah link hugging face untuk hasil pemodelan: https://huggingface.co/spaces/Zee292/sentiment-mbg/blob/main/Kelompok_4_NLP_Pemodelan.ipynb
+Berikut adalah link hugging face untuk hasil pemodelan: https://huggingface.co/spaces/Zee292/sentiment-mbg
 
 
 
