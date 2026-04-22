@@ -10,6 +10,8 @@ Repositori untuk tugas besar PBA
 
 ---
 
+Berikut adalah link hugging face untuk hasil pemodelan: https://huggingface.co/spaces/Zee292/sentiment-mbg
+
 ## Pernyataan Kontribusi
 Kami berkomitmen untuk berkontribusi secara adil dalam pengerjaan Tugas Besar ini, yang akan tercermin melalui riwayat commit pada repositori ini.
 # Klasifikasi Opini Masyarakat terhadap Program Makan Bergizi Gratis pada Media YouTube Menggunakan Metode LSTM
@@ -207,7 +209,6 @@ Berikut adalah metrik akurasi yang didapatkan dari proses pengujian model pada d
 
 ---
 
-Berikut adalah link hugging face untuk hasil pemodelan: https://huggingface.co/spaces/Zee292/sentiment-mbg
 
 
 
