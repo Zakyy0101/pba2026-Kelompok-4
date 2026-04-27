@@ -14,7 +14,9 @@ Berikut adalah link hugging face untuk hasil pemodelan: https://huggingface.co/s
 
 ## Pernyataan Kontribusi
 Kami berkomitmen untuk berkontribusi secara adil dalam pengerjaan Tugas Besar ini, yang akan tercermin melalui riwayat commit pada repositori ini.
+# Classification of Public Opinion on the Free Nutritional Meal Program on YouTube Media Using the LSTM Method
 # Klasifikasi Opini Masyarakat terhadap Program Makan Bergizi Gratis pada Media YouTube Menggunakan Metode LSTM
+
 
 ## Deskripsi Proyek
 Proyek ini merupakan implementasi Natural Language Processing (NLP) untuk melakukan klasifikasi opini masyarakat terhadap Program Makan Bergizi Gratis (MBG) berdasarkan komentar pada platform YouTube.
