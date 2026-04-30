@@ -23,7 +23,7 @@ Kami berkomitmen untuk berkontribusi secara adil dalam pengerjaan Tugas Besar in
 ## Deskripsi Proyek
 Proyek ini merupakan implementasi Natural Language Processing (NLP) untuk melakukan klasifikasi opini masyarakat terhadap Program Makan Bergizi Gratis (MBG) berdasarkan komentar pada platform YouTube.
 
-Analisis dilakukan untuk mengelompokkan opini ke dalam tiga kategori sentimen, yaitu positif, negatif, dan netral.
+Analisis dilakukan untuk mengelompokkan opini ke dalam dua kategori sentimen, yaitu positif dan negatif
 
 ---
 
