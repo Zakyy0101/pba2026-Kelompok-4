@@ -11,6 +11,7 @@ Repositori untuk tugas besar PBA
 ---
 
 Berikut adalah link hugging face untuk hasil pemodelan: https://huggingface.co/spaces/Zee292/sentiment-mbg
+Berikut adalah link hugging face untuk jurnal arxiv : https://arxiv.org/abs/2604.26312
 
 ## Pernyataan Kontribusi
 Kami berkomitmen untuk berkontribusi secara adil dalam pengerjaan Tugas Besar ini, yang akan tercermin melalui riwayat commit pada repositori ini.
